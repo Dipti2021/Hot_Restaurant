@@ -1,0 +1,26 @@
+body {
+   
+    font-family: cursive;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.432);
+    color: #dd3434;
+    border-radius: 3px;
+    float: left;
+}
+
+.jumbotron {
+    background-color: transparent;
+    text-align: center;
+}
+
+
+
+h2,h3,h4,a {
+    color: #e9d878;
+}
+
+a:hover {
+    color: rgb(219, 77, 120);
+}
