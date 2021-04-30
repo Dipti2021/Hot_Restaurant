@@ -1,13 +1,15 @@
 body {
-   
+    background-image: url("background.jpg");
+    height: 100vh;
+    background-size: cover;
     font-family: cursive;
 }
 
 .container {
-    background-color: rgba(0, 0, 0, 0.432);
-    color: #dd3434;
-    border-radius: 3px;
+   
+    color: #ec1616; 
     float: left;
+    border-radius:5 px;
 }
 
 .jumbotron {
@@ -18,7 +20,7 @@ body {
 
 
 h2,h3,h4,a {
-    color: #e9d878;
+    color: #fdfdfd;
 }
 
 a:hover {
