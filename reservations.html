@@ -31,30 +31,30 @@
 			<div class="col">
 
 				
-				<div class="form_class"><!--/*panel panel-default*/-->
-					<div class="panel-heading"> <!--panel-heading*/-->
+				<div class="form_class">
+					<div class="panel-heading"> 
 						<h4 class="title">Table Reservation</h4> <!--panel-title*/-->
 					</div>
-					<div class="panel-body">  <!--panel-body/-->
+					<div class="panel-body">  
 
 						<form role="form">
 
-							<div class="res_form">  <!--form-group*/-->
+							<div class="res_form">  
 								<label for="">Name </label>
 								<input type="text" class="form-control" type="text" id="firstname" placeholder="Your Name" required="required">
 							</div>
 
-							<div class="res_form">  <!--form-group*/-->
+							<div class="res_form">  
 								<label for="">Phone Number</label>
 								<input type="text" class="form-control" id="phoneno" placeholder="123-456-7890" required="required"> 
 							</div>
 
-							<div class="res_form"> <!--form-group-->
+							<div class="res_form"> 
 								<label for="">Email</label>
 								<input type="text" class="form-control" id="your_email" placeholder="example@mail.com" required="required">
 							</div>
 
-							<div class="res_form"> <!--form-group-->
+							<div class="res_form">
 								<label for="">Unique ID</label>
 								<input type="text" class="form-control" id="yourID" placeholder="abc1000" required="required">
 							</div>
@@ -79,42 +79,7 @@
 </body>
 </html>
 
-<script type="text/javascript">
 
-	
-
-	$(".submit").on("click", ()=>{
-        var your_reserv = {
-			name: $('#firstname').val().trim(),
-			phone_no: $('#phoneno').val().trim(),
-			mail_id: $('#your_email').val().trim(),
-			unique_ID: $('#yourID').val().trim()
-		};
-        console.log(your_reser);
-
-        var new_link = window.location.origin;
-
-        $.post(new_link + "/api/new", your_reser,
-        function(data) {
-            if(data === true){
-                alert("the table is now booked under your name")
-            }
-            else{
-                alert("Have patience. You are on the wait list")
-            }
-            $('#firstname').val("");
-            $('#phoneno').val("");
-            $('#your_email').val("");
-            $('#yourID').val("");
-  
-
-        });
-
-    return false;
-
-});
-
-</script>
 
 	
 
