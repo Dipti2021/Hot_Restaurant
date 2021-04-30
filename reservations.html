@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Reservations</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+
+		<div class="jumbotron">
+			<h1 class="text-center"><span class="glyphicon glyphicon-fire"></span> <em> Hot New Restaurant</em></h1>
+			<hr>
+			<h2 class="text-center"><em>There you go... </em> 🍽️</h2>
+			<br>
+
+			<div class="text-center">
+				<a href="/tables"><button type="button" class="btn p-3 mb-2 bg-primary text-white"><span class="fa fa-table"></span> <em>Booked Tables</em></button></a>
+				<a href="/"><button type="button" class="btn p-3 mb-2 bg-warning text-dark"><span class="glyphicon glyphicon-home"></span><em>Home</em></button></a>
+			</div>
+		</div>
+
+        <div class="row">
+			<div class="col">
+
+				
+				<div class="form_class"><!--/*panel panel-default*/-->
+					<div class="panel-heading"> <!--panel-heading*/-->
+						<h4 class="title">Table Reservation</h4> <!--panel-title*/-->
+					</div>
+					<div class="panel-body">  <!--panel-body/-->
+
+						<form role="form">
+
+							<div class="res_form">  <!--form-group*/-->
+								<label for="">Name </label>
+								<input type="text" class="form-control" type="text" id="firstname" placeholder="Your Name" required="required">
+							</div>
+
+							<div class="res_form">  <!--form-group*/-->
+								<label for="">Phone Number</label>
+								<input type="text" class="form-control" id="phoneno" placeholder="123-456-7890" required="required"> 
+							</div>
+
+							<div class="res_form"> <!--form-group-->
+								<label for="">Email</label>
+								<input type="text" class="form-control" id="your_email" placeholder="example@mail.com" required="required">
+							</div>
+
+							<div class="res_form"> <!--form-group-->
+								<label for="">Unique ID</label>
+								<input type="text" class="form-control" id="yourID" placeholder="abc1000" required="required">
+							</div>
+
+							<button type="submit" class="btn btn-danger submit ">Submit</button>
+						</form>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+        <footer class="footer">
+            <div class="container">
+                <p><a href="/api/tables/">API Table Link 🪑</a> | <a href="/api/waitlist">API Wait List ⏳</a></p>
+            </div>
+        </footer>
+    </div>
+
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+
+	
+
+	$(".submit").on("click", ()=>{
+        var your_reserv = {
+			name: $('#firstname').val().trim(),
+			phone_no: $('#phoneno').val().trim(),
+			mail_id: $('#your_email').val().trim(),
+			unique_ID: $('#yourID').val().trim()
+		};
+        console.log(your_reser);
+
+        var new_link = window.location.origin;
+
+        $.post(new_link + "/api/new", your_reser,
+        function(data) {
+            if(data === true){
+                alert("the table is now booked under your name")
+            }
+            else{
+                alert("Have patience. You are on the wait list")
+            }
+            $('#firstname').val("");
+            $('#phoneno').val("");
+            $('#your_email').val("");
+            $('#yourID').val("");
+  
+
+        });
+
+    return false;
+
+});
+
+</script>
+
+	
+
+
+    
